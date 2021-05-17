@@ -1,4 +1,5 @@
 from random import shuffle
+<<<<<<< HEAD
 from zaklocenia import negation
 
 def generator(size, ones_p, packet_size):
@@ -25,3 +26,19 @@ def save(packet_size, data):
 
   file.close() 
 
+=======
+
+size = input("długość sygnału: ")
+ones_p = input("ilość jedynek(procentowo): ")
+
+zeros = int(size) - round(int(size) * int(ones_p)/100,0)
+ones=int(size)-int(zeros)
+packet_size = input("długość pakietów: ")
+
+def generate():
+  data = [0]*int(zeros) + [1]*int(ones)
+  shuffle(data)
+
+  print (data)
+  print (data[5])
+>>>>>>> origin/main
