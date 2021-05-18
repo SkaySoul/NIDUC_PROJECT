@@ -1,5 +1,7 @@
 from random import shuffle
-from zaklocenia import negation
+from zaklocenia import negationScrambler
+from zaklocenia import repeatScrambler
+from zaklocenia import cezarScramble
 
 def generator(size, ones_p, packet_size):
 
@@ -9,8 +11,12 @@ def generator(size, ones_p, packet_size):
   data = [0]*int(zeros) + [1]*int(ones)
   shuffle(data)
   print (data)
+  #save(packet_size, data)
+  #negationScrambler(data)
+  #print(data)
+  #repeatScrambler(data)
+  cezarScramble(data, packet_size)
   save(packet_size, data)
-  negation(data)
   print(data)
 
 
