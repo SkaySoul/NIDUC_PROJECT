@@ -20,10 +20,10 @@ def cezarScramble(data, packet_size):
             data_temp.append(data[index + range_index])
         for index2 in range(0, range_var):
             temp = index2 + key
-            if temp > range_var:
+            if temp > range_var-1:
                 temp -= range_var
             if range_index + index2 < len(data):
-                data[(range_index + index2)-1] = data_temp[temp-1]
+                data[range_index + index2] = data_temp[temp]
 
 
 
