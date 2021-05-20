@@ -1,6 +1,5 @@
 from generator import generator
 
-
 def receiver(file_name, package_size, data):
 
   file = open("packages.txt", "r")
@@ -18,8 +17,6 @@ def receiver(file_name, package_size, data):
       elif line[index] != data[data_index]:
         popsute += 1
 
- # czy zmiana jadnego bitu w pakiecie powoduje zepsucie pakietu
- # czy ustalamy procent w jakim stopniu pakiet jest popsuty
   if (popsute + niepopsute) != 0:
     jak_bardzo_popsuty = popsute / (popsute + niepopsute)
 

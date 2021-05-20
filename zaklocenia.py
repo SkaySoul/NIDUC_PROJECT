@@ -10,7 +10,7 @@ def negationScrambler(data):
         index += 2
 
 
-def cezarScramble(data, packet_size):
+def shiftScramble(data, packet_size):
     key = 3
     range_var = int(packet_size)
 
@@ -20,14 +20,39 @@ def cezarScramble(data, packet_size):
             data_temp.append(data[index + range_index])
         for index2 in range(0, range_var):
             temp = index2 + key
-            if temp > range_var:
+            if temp > range_var-1:
                 temp -= range_var
             if range_index + index2 < len(data):
-                data[(range_index + index2)-1] = data_temp[temp-1]
+                data[range_index + index2] = data_temp[temp]
+
+def shiftScramble(data, packet_size):
+    key = 3
+    range_var = int(packet_size)
+
+    for range_index in range(0, len(data) - range_var, range_var):
+        data_temp = list()
+        for index in range(0, range_var):
+            data_temp.append(data[index + range_index])
+        for index2 in range(range_var, 0):
+            temp = index2 + key
+            if temp > range_var-1:
+                temp -= range_var
+            if range_index + index2 < len(data):
+                data[range_index + index2] = data_temp[temp]
 
 
 
-def repeatScrambler(data):
+
+
+
+
+
+
+# TODO stworzyć inne scrabmlery 
+# TODO  Zliczyć ile w pakiecie występuje niezmiennych sekwencji różnej długości np. w pakiecie 100111  mamy 0*2 i 1*3 i w zależnośći od wystąpień przy sobie zwiększamy prawdopodobieństwo zepsucia pakietu
+# TODO losujemy prawdopodobieństwo czy pakiet jest popsuty
+
+def repeatCounter(data):
     reps_0 = 0
     reps_1 = 0
     for index in range(0, len(data)):
