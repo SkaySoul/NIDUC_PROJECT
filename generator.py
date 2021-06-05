@@ -1,7 +1,8 @@
 from random import shuffle
-from zaklocenia import negationScrambler
-from zaklocenia import shiftScramble
-from zaklocenia import shiftDescramble
+from zaklocenia import negationScrambler, negationDescrambler
+from zaklocenia import shiftScramble, shiftDescramble
+from zaklocenia import multiplicativeScramble, multiplicativeDescramble
+
 
 def generator(size, ones_p, packet_size):
     zeros = int(size) - round(int(size) * int(ones_p) / 100, 0)
@@ -11,13 +12,20 @@ def generator(size, ones_p, packet_size):
     shuffle(data)
     print(data)
     # save(packet_size, data)
-    # negationScrambler(data)
-    # print(data)
+
+    #negationScrambler(data)
+    #print(data)
+    #negationDescrambler(data)
+
     shiftScramble(data, packet_size)
     print(data)
     shiftDescramble(data, packet_size)
-    
-    #save(packet_size, data)
+
+    #multiplicativeScramble(data)
+    #print(data)
+    #multiplicativeDescramble(data)
+
+    # save(packet_size, data)
     print(data)
 
 
