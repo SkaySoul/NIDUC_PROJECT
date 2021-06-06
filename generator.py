@@ -2,6 +2,7 @@ from random import shuffle
 from zaklocenia import negationScrambler, negationDescrambler
 from zaklocenia import shiftScramble, shiftDescramble
 from zaklocenia import multiplicativeScramble, multiplicativeDescramble
+from zaklocenia import additiveScramble, additiveDescramble
 
 
 def generator(size, ones_p, packet_size):
@@ -17,13 +18,17 @@ def generator(size, ones_p, packet_size):
     #print(data)
     #negationDescrambler(data)
 
-    shiftScramble(data, packet_size)
-    print(data)
-    shiftDescramble(data, packet_size)
-
-    #multiplicativeScramble(data)
+    #shiftScramble(data, packet_size)
     #print(data)
-    #multiplicativeDescramble(data)
+    #shiftDescramble(data, packet_size)
+
+    multiplicativeScramble(data)
+    print(data)
+    multiplicativeDescramble(data)
+
+    #additiveScramble(data)
+    #print(data)
+    #additiveDescramble(data)
 
     # save(packet_size, data)
     print(data)

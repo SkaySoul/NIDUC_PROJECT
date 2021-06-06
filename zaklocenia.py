@@ -62,8 +62,7 @@ def multiplicativeScramble(data):
     current_index = Index2
 
     while current_index < len(data):
-        data[current_index] = data[current_index] ^ (
-                data[current_index - Index1] ^ data[current_index - Index2])
+        data[current_index] = data[current_index] ^ (data[current_index - Index1] ^ data[current_index - Index2])
         current_index += 1
 
 
@@ -72,9 +71,29 @@ def multiplicativeDescramble(data):
     temp = data.copy()
 
     while current_index < len(temp):
-        data[current_index] = temp[current_index] ^ (
-                temp[current_index - Index1] ^ temp[current_index - Index2])
+        data[current_index] = temp[current_index] ^ (temp[current_index - Index1] ^ temp[current_index - Index2])
         current_index += 1
+
+
+# xor - nie działa - scramble key był generowany jako bitarray a nie listę
+scramble_key = [101010]
+
+
+def additiveScramble(data):
+    current_index = 0
+
+    while current_index < len(data):
+        data[current_index:(current_index + len(scramble_key))] = data[current_index:(current_index + len(scramble_key))] ^ scramble_key
+        current_index += len(scramble_key)
+
+
+def additiveDescramble(data):
+    current_index = 0
+    temp = data.copy()
+
+    while current_index < len(temp):
+        data[current_index:(current_index + len(scramble_key))] = temp[current_index:(current_index + len(scramble_key))] ^ scramble_key
+        current_index += len(scramble_key)
 
 
 # TODO stworzyć inne scrabmlery
