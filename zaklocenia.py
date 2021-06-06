@@ -1,3 +1,7 @@
+from bitarray import bitarray
+from bitarray.util import int2ba
+
+
 def negationScrambler(data):
     index = 0
     while index < len(data):
@@ -75,12 +79,15 @@ def multiplicativeDescramble(data):
         current_index += 1
 
 
-# xor - nie działa - scramble key był generowany jako bitarray a nie listę
-scramble_key = [101010]
+# xor - nie działa - jakiś błąd '^ - binary xor'
+# scramble_key = bitarray('1010011')
+# scramble_key = int2ba(83)
+# scramble_key = {1, 0, 1, 0, 0, 1, 1}
 
 
 def additiveScramble(data):
     current_index = 0
+    scramble_key = int2ba(83)
 
     while current_index < len(data):
         data[current_index:(current_index + len(scramble_key))] = data[current_index:(current_index + len(scramble_key))] ^ scramble_key
@@ -90,6 +97,7 @@ def additiveScramble(data):
 def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
+    scramble_key = int2ba(83)
 
     while current_index < len(temp):
         data[current_index:(current_index + len(scramble_key))] = temp[current_index:(current_index + len(scramble_key))] ^ scramble_key

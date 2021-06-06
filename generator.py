@@ -1,4 +1,5 @@
 from random import shuffle
+from bitarray import bitarray
 from zaklocenia import negationScrambler, negationDescrambler
 from zaklocenia import shiftScramble, shiftDescramble
 from zaklocenia import multiplicativeScramble, multiplicativeDescramble
@@ -9,26 +10,31 @@ def generator(size, ones_p, packet_size):
     zeros = int(size) - round(int(size) * int(ones_p) / 100, 0)
     ones = int(size) - int(zeros)
 
-    data = [0] * int(zeros) + [1] * int(ones)
+    data = bitarray()
+    for i in range(0, int(zeros)):
+        data.append(0)
+    for j in range(0, int(ones)):
+        data.append(1)
+    # data = [0] * int(zeros) + [1] * int(ones)
     shuffle(data)
     print(data)
     # save(packet_size, data)
 
-    #negationScrambler(data)
-    #print(data)
-    #negationDescrambler(data)
+    # negationScrambler(data)
+    # print(data)
+    # negationDescrambler(data)
 
-    #shiftScramble(data, packet_size)
-    #print(data)
-    #shiftDescramble(data, packet_size)
+    # shiftScramble(data, packet_size)
+    # print(data)
+    # shiftDescramble(data, packet_size)
 
-    multiplicativeScramble(data)
+    # multiplicativeScramble(data)
+    # print(data)
+    # multiplicativeDescramble(data)
+
+    additiveScramble(data)
     print(data)
-    multiplicativeDescramble(data)
-
-    #additiveScramble(data)
-    #print(data)
-    #additiveDescramble(data)
+    additiveDescramble(data)
 
     # save(packet_size, data)
     print(data)
