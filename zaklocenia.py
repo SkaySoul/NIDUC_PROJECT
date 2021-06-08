@@ -25,7 +25,7 @@ def shiftScramble(data, packet_size):
             if range_index + index2 < len(data):
                 data[range_index + index2] = data_temp[temp]
 
-def shiftScramble(data, packet_size):
+def shiftDecramble(data, packet_size):
     key = 3
     range_var = int(packet_size)
 
@@ -39,12 +39,6 @@ def shiftScramble(data, packet_size):
                 temp -= range_var
             if range_index + index2 < len(data):
                 data[range_index + index2] = data_temp[temp]
-
-
-
-
-
-
 
 
 
