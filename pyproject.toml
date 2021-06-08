@@ -6,6 +6,7 @@ authors = ["SkaySoul <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+bitarray = "^2.1.0"
 
 [tool.poetry.dev-dependencies]
 
