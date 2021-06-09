@@ -1,4 +1,3 @@
-# TODO stworzyć inne scrabmlery
 
 # TODO  Zliczyć ile w pakiecie występuje niezmiennych sekwencji różnej długości np. w pakiecie 100111  mamy 0*2 i 1*3 i w zależnośći od wystąpień przy sobie zwiększamy prawdopodobieństwo zepsucia pakietu
 # TODO losujemy prawdopodobieństwo czy pakiet jest popsuty
@@ -11,7 +10,7 @@ def repeatCounter(data, packet_length):
     reps_1 = 0
 
     temp = 0
-    for zmienna in range(0, int(len(data) / int(packet_length))):
+    for repeats in range(0, int(len(data) / int(packet_length))):
 
         reps_1 = 0
         reps_1_max = 0
