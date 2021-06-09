@@ -1,4 +1,3 @@
-
 # TODO  Zliczyć ile w pakiecie występuje niezmiennych sekwencji różnej długości np. w pakiecie 100111  mamy 0*2 i 1*3 i w zależnośći od wystąpień przy sobie zwiększamy prawdopodobieństwo zepsucia pakietu
 # TODO losujemy prawdopodobieństwo czy pakiet jest popsuty
 

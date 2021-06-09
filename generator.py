@@ -29,9 +29,9 @@ def generator(size, ones_p, packet_size):
     print(data)
     shiftDescramble(data, packet_size)
 
-    #multiplicativeScramble(data)
-    #print(data)
-    #multiplicativeDescramble(data)
+    # multiplicativeScramble(data)
+    # print(data)
+    # multiplicativeDescramble(data)
 
     # additiveScramble(data)
     # print(data)

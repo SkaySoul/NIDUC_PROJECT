@@ -52,7 +52,7 @@ def shiftDescramble(data, packet_size):
             data_temp.append(data[index + range_index])
         for index2 in range(0, range_var):
             temp = index2 + (range_var - key)
-            if temp > range_var-1:
+            if temp > range_var - 1:
                 temp -= range_var
             if range_index + index2 < len(data):
                 data[range_index + index2] = data_temp[temp]
@@ -68,7 +68,6 @@ def multiplicativeScramble(data):
     while current_index < len(data):
         data[current_index] = data[current_index] ^ (data[current_index - Index1] ^ data[current_index - Index2])
         current_index += 1
-
 
 
 def multiplicativeDescramble(data):
@@ -114,4 +113,3 @@ def additiveDescramble(data):
         data[current_index:(current_index + len(scramble_key))] = temp[current_index:(
                 current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)
-
