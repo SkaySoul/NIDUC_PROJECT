@@ -99,22 +99,24 @@ def XORKeyGenerator(seed):
 
 def additiveScramble(data):
     current_index = 0
-    #scramble_key = int2ba(int(len(data)/2))
+    # scramble_key = int2ba(int(len(data)/2))
     scramble_key = XORKeyGenerator(5)
 
     while current_index < len(data) - 1:
-        data[current_index:(current_index + len(scramble_key))] = data[current_index:(current_index + len(scramble_key))] ^ scramble_key
+        data[current_index:(current_index + len(scramble_key))] = data[current_index:(
+                current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)
 
 
 def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
-    #scramble_key = int2ba(int(len(data)/2))
+    # scramble_key = int2ba(int(len(data)/2))
     scramble_key = XORKeyGenerator(5)
 
     while current_index < len(temp) - 1:
-        data[current_index:(current_index + len(scramble_key))] = temp[current_index:(current_index + len(scramble_key))] ^ scramble_key
+        data[current_index:(current_index + len(scramble_key))] = temp[current_index:(
+                current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)
 
 
@@ -142,3 +144,34 @@ def repeatCounter(data):
             if reps_1 == 3:
                 data[index] = 0
                 reps_1 = 0
+
+
+def repeatCounter(data, packet_length):
+    reps_0_max = 0
+    reps_0 = 0
+    reps_1_max = 0
+    reps_1 = 0
+
+    temp = 0
+    for zmienna in range(0, len(data) / packet_length):
+
+        reps_1 = 0
+        reps_1_max = 0
+        reps_0 = 0
+        reps_0_max = 0
+
+        for index in range(0, packet_length):
+            if data[temp + index] == 0:
+                reps_0 += 1
+                if reps_1_max < reps_1:
+                    reps_1_max = reps_1
+                reps_1 = 0
+
+            if data[temp + index] == 1:
+                reps_1 += 1
+                if reps_0_max < reps_0:
+                    reps_0_max = reps_0
+                reps_0 = 0
+        print("Jedynki: " + reps_1_max)
+        print("Zera: " + reps_0_max)
+        temp += packet_length

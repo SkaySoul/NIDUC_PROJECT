@@ -20,9 +20,9 @@ def generator(size, ones_p, packet_size):
     print(data)
     # save(packet_size, data)
 
-    #negationScramble(data)
-    #print(data)
-    #negationDescramble(data)
+    # negationScramble(data)
+    # print(data)
+    # negationDescramble(data)
 
     shiftScramble(data, packet_size)
     print(data)
@@ -32,9 +32,9 @@ def generator(size, ones_p, packet_size):
     # print(data)
     # multiplicativeDescramble(data)
 
-    #additiveScramble(data)
-    #print(data)
-    #additiveDescramble(data)
+    # additiveScramble(data)
+    # print(data)
+    # additiveDescramble(data)
 
     # save(packet_size, data)
     print(data)
