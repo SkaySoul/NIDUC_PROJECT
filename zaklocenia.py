@@ -27,10 +27,11 @@ def negationDescramble(data):
 
 
 def shiftScramble(data, packet_size):
+    data.tolist()
     key = 3
     range_var = int(packet_size)
 
-    for range_index in range(0, len(data) - range_var, range_var):
+    for range_index in range(0, len(data) - range_var+1, range_var):
         data_temp = list()
         for index in range(0, range_var):
             data_temp.append(data[index + range_index])
@@ -43,16 +44,17 @@ def shiftScramble(data, packet_size):
 
 
 def shiftDescramble(data, packet_size):
+    data.tolist()
     key = 3
     range_var = int(packet_size)
 
-    for range_index in range(0, len(data) - range_var, range_var):
+    for range_index in range(0, len(data) - range_var+1, range_var):
         data_temp = list()
         for index in range(0, range_var):
             data_temp.append(data[index + range_index])
-        for index2 in range(range_var, 0):
+        for index2 in range(0, range_var):
             temp = index2 + (range_var - key)
-            if temp > range_var - 1:
+            if temp > range_var-1:
                 temp -= range_var
             if range_index + index2 < len(data):
                 data[range_index + index2] = data_temp[temp]
@@ -70,8 +72,6 @@ def multiplicativeScramble(data):
         current_index += 1
 
 
-# TODO stworzyć inne scrabmlery 
-
 
 def multiplicativeDescramble(data):
     current_index = Index2
@@ -82,25 +82,22 @@ def multiplicativeDescramble(data):
         current_index += 1
 
 
-# xor - nie działa - jakiś błąd '^ - binary xor'
-# seed musi być podzielny przez długość sygnału
+# długość seeda w reprezentacji binarnej musi być podzielna przez długość długości sygnału w binarnej
+# 66 = 1000010 (7) | 8 856 = 10001010011000 (14)
 
+# Polynomial 1+z^(-3)+z^(4)+z^(-5)
+def keyGenerator(seed):
+    generated_key = seed
 
-# Polynomial 1+z^(-3)+z^(4)+z^(-7)
-def XORKeyGenerator(seed):
-    generatedKey = seed
-
-    generatedKey ^= generatedKey >> 3
-    generatedKey ^= generatedKey << 2
-    generatedKey ^= generatedKey >> 7
-    # print(int2ba(generatedKey))
-    return int2ba(generatedKey)
+    generated_key ^= generated_key >> 3
+    generated_key ^= generated_key << 4
+    generated_key ^= generated_key >> 5
+    return int2ba(generated_key)
 
 
 def additiveScramble(data):
     current_index = 0
-    #scramble_key = int2ba(int(len(data)/2))
-    scramble_key = XORKeyGenerator(5)
+    scramble_key = keyGenerator(66)
 
     while current_index < len(data) - 1:
         data[current_index:(current_index + len(scramble_key))] = data[current_index:(current_index + len(scramble_key))] ^ scramble_key
@@ -110,35 +107,9 @@ def additiveScramble(data):
 def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
-    #scramble_key = int2ba(int(len(data)/2))
-    scramble_key = XORKeyGenerator(5)
+    scramble_key = keyGenerator(66)
 
     while current_index < len(temp) - 1:
         data[current_index:(current_index + len(scramble_key))] = temp[current_index:(current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)
 
-
-# TODO stworzyć inne scrabmlery
-
-# TODO  Zliczyć ile w pakiecie występuje niezmiennych sekwencji różnej długości np. w pakiecie 100111  mamy 0*2 i 1*3 i w zależnośći od wystąpień przy sobie zwiększamy prawdopodobieństwo zepsucia pakietu
-# TODO losujemy prawdopodobieństwo czy pakiet jest popsuty
-
-def repeatCounter(data):
-    reps_0 = 0
-    reps_1 = 0
-    for index in range(0, len(data)):
-        if data[index] == 0:
-            reps_0 += 1
-            reps_1 = 0
-
-            if reps_0 == 3:
-                data[index] = 1
-                reps_0 = 0
-
-        if data[index] == 1:
-            reps_1 += 1
-            reps_0 = 0
-
-            if reps_1 == 3:
-                data[index] = 0
-                reps_1 = 0
