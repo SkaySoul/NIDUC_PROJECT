@@ -4,6 +4,7 @@ from zaklocenia import negationScramble, negationDescramble
 from zaklocenia import shiftScramble, shiftDescramble
 from zaklocenia import multiplicativeScramble, multiplicativeDescramble
 from zaklocenia import additiveScramble, additiveDescramble
+from analiza import repeatCounter
 
 
 def generator(size, ones_p, packet_size):
@@ -37,11 +38,14 @@ def generator(size, ones_p, packet_size):
     # additiveDescramble(data)
 
     # save(packet_size, data)
+
+    # repeatCounter(data, packet_size)
+
     print(data)
 
 
 def save(packet_size, data):
-    file = open("packages.txt", "w+")  # "w+"- do zapisu i odczytu
+    file = open("packages.txt", "w+")
 
     for index in range(1, len(data) + 1):
         file.write(str(data[index - 1]))
