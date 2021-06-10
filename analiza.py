@@ -7,10 +7,12 @@ from odbiornik import packetDetector
 
 
 # zapis pomiarów do pliku csv
-def stats(data, packet_length):
+def stats(data, packet_length, one):
     file = open('results.csv', 'w')
     writer = csv.writer(file)
-    header = ['(długość pakietów)  (procentowa ilość 1)  (ilość popsutych pakietów)  (rodzaj scramblera)']
+    header = ['(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)']
     writer.writerow(header)
-    writer.writerow([packet_length, packetDetector(data, packet_length)])
+    broken = int(packetDetector(data, packet_length))
+    good = int((len(data) / int(packet_length)) - broken)
+    writer.writerow([good, broken, one, 'Multiplicative'])
     file.close()

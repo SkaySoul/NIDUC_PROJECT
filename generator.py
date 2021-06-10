@@ -31,6 +31,7 @@ def generate(size, ones_p, packet_size):
     # shiftDescramble(data, packet_size)
 
     multiplicativeScramble(data)
+    stats(data, packet_size, ones_p)
     print(data)
     multiplicativeDescramble(data)
 
@@ -44,4 +45,3 @@ def generate(size, ones_p, packet_size):
 
     print(data)
 
-    stats(data, packet_size)
