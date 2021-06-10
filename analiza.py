@@ -1,5 +1,5 @@
 # TODO analiza etap 2- https://datko.pl/NiDUC2/etap2.pdf
-# poprawić csv(dostosować do analizy), poprawa struktury projektu, analiza
+# poprawić csv(dostosować do analizy), poprawa struktury projektu, analiza, poprawa funkcji wyznaczającej prawdopodobieństwo zepsucia
 from random import randint
 import csv
 
