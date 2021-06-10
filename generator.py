@@ -4,7 +4,7 @@ from zaklocenia import negationScramble, negationDescramble
 from zaklocenia import shiftScramble, shiftDescramble
 from zaklocenia import multiplicativeScramble, multiplicativeDescramble
 from zaklocenia import additiveScramble, additiveDescramble
-from analiza import repeatCounter
+from analiza import repeatCounter, stats
 
 
 def generator(size, ones_p, packet_size):
@@ -25,13 +25,13 @@ def generator(size, ones_p, packet_size):
     # print(data)
     # negationDescramble(data)
 
-    shiftScramble(data, packet_size)
-    print(data)
-    shiftDescramble(data, packet_size)
+    #shiftScramble(data, packet_size)
+    #print(data)
+    #shiftDescramble(data, packet_size)
 
-    # multiplicativeScramble(data)
-    # print(data)
-    # multiplicativeDescramble(data)
+    multiplicativeScramble(data)
+    print(data)
+    multiplicativeDescramble(data)
 
     # additiveScramble(data)
     # print(data)
@@ -42,6 +42,10 @@ def generator(size, ones_p, packet_size):
     # repeatCounter(data, packet_size)
 
     print(data)
+
+    stats(data, packet_size)
+
+    
 
 
 def save(packet_size, data):
