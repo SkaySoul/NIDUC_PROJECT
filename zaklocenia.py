@@ -64,7 +64,7 @@ Index1 = 5
 Index2 = 10
 
 
-# operacja XOR pomiędzy badaną pozycją a wybranymi pozycjami przesuniętymi w prawo
+# operacja XOR pomiędzy badaną pozycją a wybranymi pozycjami przesuniętymi w lewo
 def multiplicativeScramble(data):
     current_index = Index2
 
