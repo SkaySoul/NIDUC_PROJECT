@@ -1,15 +1,16 @@
-from generator import generator
 from zaklocenia import negationScramble, negationDescramble
 from zaklocenia import shiftScramble, shiftDescramble
 from zaklocenia import multiplicativeScramble, multiplicativeDescramble
 from zaklocenia import additiveScramble, additiveDescramble
-from analiza import repeatCounter, stats
+from analiza import stats
+from generator import generate
+
 
 size = input("długość sygnału: ")
 ones_p = input("ilość jedynek(procentowo): ")
 packet_size = input("długość pakietów: ")
 
-data = generator(size, ones_p, packet_size)
+data = generate(size, ones_p, packet_size)
 
 print(data)
 # save(packet_size, data)
@@ -36,4 +37,5 @@ multiplicativeDescramble(data)
 
 print(data)
 
-stats(data, packet_size)
+stats(data, packet_size, ones_p)
+

@@ -2,6 +2,7 @@ from bitarray import bitarray
 from bitarray.util import int2ba
 
 
+# negacja co 2 bitu
 def negationScramble(data):
     index = 0
     while index < len(data):
@@ -26,6 +27,7 @@ def negationDescramble(data):
         index += 2
 
 
+# przesunięcie o 3 pozycje
 def shiftScramble(data, packet_size):
     key = 3
     range_var = int(packet_size)
@@ -62,6 +64,7 @@ Index1 = 5
 Index2 = 10
 
 
+# operacja XOR pomiędzy badaną pozycją a wybranymi pozycjami przesuniętymi w lewo
 def multiplicativeScramble(data):
     current_index = Index2
 
@@ -79,22 +82,22 @@ def multiplicativeDescramble(data):
         current_index += 1
 
 
-# długość seeda w reprezentacji binarnej musi być podzielna przez długość długości sygnału w binarnej
+# długość seeda w NB musi być podzielna przez długość długości sygnału w NB
 # 66 = 1000010 (7) | 8856 = 10001010011000 (14)
 
-# Polynomial 1+z^(-3)+z^(4)+z^(-5)
 def keyGenerator(seed):
     generated_key = seed
 
+    # wzór: 1+z^(-3)+z^(4)+z^(-5)
     generated_key ^= generated_key >> 3
     generated_key ^= generated_key << 4
     generated_key ^= generated_key >> 5
     return int2ba(generated_key)
 
 
+# operacja XOR pomiędzy częścią sygnału a wygenerowanym kluczem
 def additiveScramble(data):
     current_index = 0
-    # scramble_key = int2ba(int(len(data)/2))
     scramble_key = keyGenerator(66)
 
     while current_index < len(data) - 1:
@@ -106,7 +109,6 @@ def additiveScramble(data):
 def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
-    # scramble_key = int2ba(int(len(data)/2))
     scramble_key = keyGenerator(66)
 
     while current_index < len(temp) - 1:
