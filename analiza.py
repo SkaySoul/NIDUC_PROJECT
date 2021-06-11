@@ -1,5 +1,9 @@
 import csv
+<<<<<<< HEAD
 import numpy as np
+=======
+from numpy import np
+>>>>>>> 6e563e8eda5b0e2d868cac4fd3980d921e8e4367
 from odbiornik import packetDetector
 
 
@@ -19,6 +23,7 @@ def stats(data, packet_length, one, scr_type):
 
 
 
+<<<<<<< HEAD
 def firstPointSummary(brokenPackets):
   return np.percentile(brokenPackets, 0, interpolation='midpoint')
 
@@ -52,3 +57,13 @@ def stendardDeviation(brokenPackets):
   
 
 average=np.mean(brokenPackets)"""
+=======
+def fivePointSummary(data):
+  return np.percentile(data, [0, 25, 50, 75, 100], interpolation='midpoint')
+  
+
+def analyze(data):
+  analyzed = fivePointSummary(data)
+  iqr = analyzed[3]-analyzed[1]
+  
+>>>>>>> 6e563e8eda5b0e2d868cac4fd3980d921e8e4367
