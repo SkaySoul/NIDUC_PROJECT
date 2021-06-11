@@ -86,9 +86,9 @@ def multiplicativeDescramble(data):
 def additiveScramble(data):
     current_index = 0
     scramble_key = int2ba(len(data))
-    scramble_key = int2ba(50)
+    # scramble_key = int2ba(50)
 
-    while current_index < len(data) - 1:
+    while current_index <= (len(data) - len(scramble_key)):
         data[current_index:(current_index + len(scramble_key))] = data[current_index:(current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)
 
@@ -97,8 +97,8 @@ def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
     scramble_key = int2ba(len(data))
-    scramble_key = int2ba(50)
+    # scramble_key = int2ba(50)
 
-    while current_index < len(temp) - 1:
+    while current_index <= (len(temp) - len(scramble_key)):
         data[current_index:(current_index + len(scramble_key))] = temp[current_index:(current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)

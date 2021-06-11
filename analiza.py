@@ -42,7 +42,7 @@ def arithmeticAverage(brokenPackets):
     return np.mean(brokenPackets)
 
 
-def stendardDeviation(brokenPackets):
+def standardDeviation(brokenPackets):
     return round(np.std(brokenPackets), 3)
 
 
