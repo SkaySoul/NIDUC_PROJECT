@@ -1,4 +1,5 @@
 from random import randint
+import math
 
 
 # TODO poprawa funkcji wyznaczającej prawdopodobieństwo zepsucia
@@ -48,9 +49,8 @@ def packetDetector(data, packet_length):
 # prawdopodobieństwo zepsucia pakietu
 def corruptionProbability(reps_1, reps_0, packet_length):
     probability = 0
-    probability += reps_1 * 2
-    probability += reps_0 * 3
-    # probability /= packet_length
+    probability += reps_1 * 1 *(1/(1+math.e**-int(packet_length)))
+    probability += reps_0 * 2 *(1/(1+math.e**-int(packet_length)))
     rand = randint(1, 100)
 
     if rand <= probability:

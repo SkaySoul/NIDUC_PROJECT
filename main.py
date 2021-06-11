@@ -1,13 +1,13 @@
 from zaklocenia import *
-from analiza import stats
+from analiza import *
 from generator import generate
 import csv
 
 size = input("długość sygnału: ")
 ones_p = input("ilość jedynek(procentowo): ")
 packet_size = input("długość pakietów: ")
-option = input("1-neg 2-shift 3-mult 4-add")
-number = input("liczba powtórzeń")
+number = input("liczba pomiarów na powtórzenie: ")
+number_2 = input("liczba powtórzeń: ")
 broken_packets = list()
 
 file = open('results.csv', 'a')
@@ -16,6 +16,12 @@ header = ['(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (proce
 writer.writerow(header)
 file.close()
 
+statistics = open('stats.csv', 'a')
+writer2 = csv.writer(statistics)
+header2 = ['(min) (first quartile) (median) (third quartile) (max) (average) (deviation)']
+writer2.writerow(header2)
+
+
 def negation():
     data = generate(size, ones_p, packet_size)
     # print(data)
@@ -23,7 +29,8 @@ def negation():
     broken_packets.append(stats(data, packet_size, ones_p, "negation"))
     # print(data)
     negationDescramble(data)
- 
+
+
 def shift():
     data = generate(size, ones_p, packet_size)
     # print(data)
@@ -31,7 +38,8 @@ def shift():
     broken_packets.append(stats(data, packet_size, ones_p, "shift"))
     # print(data)
     shiftDescramble(data, packet_size)
- 
+
+
 def multiplicative():
     data = generate(size, ones_p, packet_size)
     # print(data)
@@ -40,6 +48,7 @@ def multiplicative():
     # print(data)
     multiplicativeDescramble(data)
 
+
 def additive():
     data = generate(size, ones_p, packet_size)
     # print(data)
@@ -47,19 +56,27 @@ def additive():
     broken_packets.append(stats(data, packet_size, ones_p, "additive"))
     # print(data)
     additiveDescramble(data)
- 
-
-switcher = {
-    1: negation,
-    2: shift,
-    3: multiplicative,
-    4: additive
-    }
 
 
-for i in range(0, number):
-  switcher[option]
+for x in range(0, int(number_2)):
 
+    for i in range(0, int(number)):
+        negation()
 
-broken_packets.clear()
+    for i in range(0, int(number)):
+        shift()
 
+    for i in range(0, int(number)):
+        multiplicative()
+
+    for i in range(0, int(number)):
+        additive()
+
+    writer2.writerow(
+        [firstPointSummary(broken_packets), secondPointSummary(broken_packets), thirdPointSummary(broken_packets),
+         fourthPointSummary(broken_packets), fifthPointSummary(broken_packets), arithmeticAverage(broken_packets),
+         stendardDeviation(broken_packets)])
+    # tutaj robimy coś z listą -> statystyka 5-punktowa
+    broken_packets.clear()
+
+statistics.close()

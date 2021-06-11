@@ -60,8 +60,8 @@ def shiftDescramble(data, packet_size):
                 data[range_index + index2] = data_temp[temp]
 
 
-Index1 = 5
-Index2 = 10
+Index1 = 3
+Index2 = 7
 
 
 # operacja XOR pomiędzy badaną pozycją a wybranymi pozycjami przesuniętymi w lewo
@@ -82,36 +82,23 @@ def multiplicativeDescramble(data):
         current_index += 1
 
 
-# długość seeda w NB musi być podzielna przez długość długości sygnału w NB
-# 66 = 1000010 (7) | 8856 = 10001010011000 (14)
-
-def keyGenerator(seed):
-    generated_key = seed
-
-    # wzór: 1+z^(-3)+z^(4)+z^(-5)
-    generated_key ^= generated_key >> 3
-    generated_key ^= generated_key << 4
-    generated_key ^= generated_key >> 5
-    return int2ba(generated_key)
-
-
 # operacja XOR pomiędzy częścią sygnału a wygenerowanym kluczem
 def additiveScramble(data):
     current_index = 0
-    scramble_key = keyGenerator(66)
+    scramble_key = int2ba(len(data))
+    scramble_key = int2ba(50)
 
     while current_index < len(data) - 1:
-        data[current_index:(current_index + len(scramble_key))] = data[current_index:(
-                current_index + len(scramble_key))] ^ scramble_key
+        data[current_index:(current_index + len(scramble_key))] = data[current_index:(current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)
 
 
 def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
-    scramble_key = keyGenerator(66)
+    scramble_key = int2ba(len(data))
+    scramble_key = int2ba(50)
 
     while current_index < len(temp) - 1:
-        data[current_index:(current_index + len(scramble_key))] = temp[current_index:(
-                current_index + len(scramble_key))] ^ scramble_key
+        data[current_index:(current_index + len(scramble_key))] = temp[current_index:(current_index + len(scramble_key))] ^ scramble_key
         current_index += len(scramble_key)

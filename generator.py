@@ -2,7 +2,7 @@ from random import shuffle
 from bitarray import bitarray
 
 
-# główna funkcja sterująca programem
+# funkcja generująca sygnał
 def generate(size, ones_p, packet_size):
     zeros = int(size) - round(int(size) * int(ones_p) / 100, 0)
     ones = int(size) - int(zeros)
