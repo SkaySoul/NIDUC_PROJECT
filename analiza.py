@@ -2,6 +2,7 @@ import csv
 import numpy as np
 from odbiornik import packetDetector
 import matplotlib.pyplot as plt
+import scipy.stats as st
 
 # analiza etap 2- https://datko.pl/NiDUC2/etap2.pdf
 # TODO poprawić csv(dostosować do analizy), ANALIZA!!!
@@ -55,19 +56,27 @@ def standardDeviation(brokenPackets):
   axs[0].hist(brokenPackets['Histogram'], bins=n_bins)
   fig1.savefig('histogram.svg')
 """
-
-
-
-
-def plotCreator(brokenPackets):
-  plt.boxplot(brokenPackets)
-  plt.savefig('boxplot.svg')
-  plt.clf()
+ 
+def plots(brokenPackets):
+  fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+  
   n_bins = len(brokenPackets)
-  plt.hist(brokenPackets, bins=n_bins)
-  plt.savefig('histogram.svg')
+  axes[0].hist(brokenPackets, bins=n_bins, density = 'true', label = "Data")
+  axes[0].set(title = 'Histogram')
+  axes[0].set(xlabel = 'Data')
+  axes[0].set(ylabel = 'Frequirency')
+  axes[0].legend(loc="upper right")
  
- 
+  axes[1].boxplot(brokenPackets)
+  axes[1].set(title = 'Boxplot')
+  axes[1].set(xlabel = 'Data')
+  axes[1].set(ylabel = 'Frequirency')
+  
+
+  plt.savefig('plot.svg')
+  plt.show()
+
+
 
   
 

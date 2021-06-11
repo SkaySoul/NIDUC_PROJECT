@@ -80,5 +80,5 @@ for x in range(0, int(number_2)):
          standardDeviation(broken_packets)])
 
     #broken_packets.clear()
-plotCreator(broken_packets)
+plots(broken_packets)
 statistics.close()
