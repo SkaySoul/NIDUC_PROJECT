@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
 129,21,15,negation
 135,15,15,negation
@@ -319,3 +320,5 @@
 1818,182,10,negation
 1167,833,10,shift
 1710,290,10,multiplicative
+=======
+>>>>>>> refs/remotes/origin/main
