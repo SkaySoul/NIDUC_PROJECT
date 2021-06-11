@@ -1,10 +1,6 @@
-from zaklocenia import negationScramble, negationDescramble
-from zaklocenia import shiftScramble, shiftDescramble
-from zaklocenia import multiplicativeScramble, multiplicativeDescramble
-from zaklocenia import additiveScramble, additiveDescramble
+from zaklocenia import *
 from analiza import stats
 from generator import generate
-
 
 size = input("długość sygnału: ")
 ones_p = input("ilość jedynek(procentowo): ")
@@ -19,9 +15,9 @@ print(data)
 # print(data)
 # negationDescramble(data)
 
-#shiftScramble(data, packet_size)
-#print(data)
-#shiftDescramble(data, packet_size)
+# shiftScramble(data, packet_size)
+# print(data)
+# shiftDescramble(data, packet_size)
 
 multiplicativeScramble(data)
 print(data)
@@ -38,4 +34,3 @@ multiplicativeDescramble(data)
 print(data)
 
 stats(data, packet_size, ones_p)
-
