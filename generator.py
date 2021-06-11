@@ -1,10 +1,5 @@
 from random import shuffle
 from bitarray import bitarray
-from zaklocenia import negationScramble, negationDescramble
-from zaklocenia import shiftScramble, shiftDescramble
-from zaklocenia import multiplicativeScramble, multiplicativeDescramble
-from zaklocenia import additiveScramble, additiveDescramble
-from analiza import repeatCounter, stats
 
 
 def generator(size, ones_p, packet_size):
@@ -18,42 +13,8 @@ def generator(size, ones_p, packet_size):
         data.append(1)
     # data = [0] * int(zeros) + [1] * int(ones)
     shuffle(data)
-    print(data)
-    # save(packet_size, data)
-
-    # negationScramble(data)
-    # print(data)
-    # negationDescramble(data)
-
-    #shiftScramble(data, packet_size)
-    #print(data)
-    #shiftDescramble(data, packet_size)
-
-    multiplicativeScramble(data)
-    print(data)
-    multiplicativeDescramble(data)
-
-    # additiveScramble(data)
-    # print(data)
-    # additiveDescramble(data)
-
-    # save(packet_size, data)
-
-    # repeatCounter(data, packet_size)
-
-    print(data)
-
-    stats(data, packet_size)
+    return data
+    
 
     
 
-
-def save(packet_size, data):
-    file = open("packages.txt", "w+")
-
-    for index in range(1, len(data) + 1):
-        file.write(str(data[index - 1]))
-        if index % int(packet_size) == 0:
-            file.write("\n")
-
-    file.close()
