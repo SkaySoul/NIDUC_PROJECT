@@ -1,8 +1,7 @@
 import csv
 import numpy as np
-import matplotlib.pyplot as plt
 from odbiornik import packetDetector
-
+import matplotlib.pyplot as plt
 
 # analiza etap 2- https://datko.pl/NiDUC2/etap2.pdf
 # TODO poprawić csv(dostosować do analizy), ANALIZA!!!
@@ -43,7 +42,7 @@ def arithmeticAverage(brokenPackets):
     return np.mean(brokenPackets)
 
 
-def stendardDeviation(brokenPackets):
+def standardDeviation(brokenPackets):
     return round(np.std(brokenPackets), 3)
 
 
@@ -60,12 +59,16 @@ def stendardDeviation(brokenPackets):
 
 
 
-def boxPlot(brokenPackets):
- fig = plt.figure(figsize =(10, 7))
+def plotCreator(brokenPackets):
+  plt.boxplot(brokenPackets)
+  plt.savefig('boxplot.svg')
+  plt.clf()
+  n_bins = len(brokenPackets)
+  plt.hist(brokenPackets, bins=n_bins)
+  plt.savefig('histogram.svg')
  
- # Creating plot
- plt.boxplot(brokenPackets)
+ 
+
   
-# show plot
- plt.show()
+
 

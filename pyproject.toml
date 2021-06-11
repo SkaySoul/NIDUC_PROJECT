@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "repl_python3_NIDUCPROJECT"
+name = "repl_python3_beta_NIDUCPROJECT"
 version = "0.1.0"
 description = ""
 authors = ["SkaySoul <<>>"]

@@ -22,6 +22,8 @@ header2 = ['(min) (first quartile) (median) (third quartile) (max) (average) (de
 writer2.writerow(header2)
 
 
+
+
 def negation():
     data = generate(size, ones_p, packet_size)
     # print(data)
@@ -60,23 +62,23 @@ def additive():
 
 for x in range(0, int(number_2)):
 
-  for i in range(0, int(number)):
-    negation()
-  
-  for i in range(0, int(number)):
-    shift()
+    for i in range(0, int(number)):
+        negation()
 
-  for i in range(0, int(number)):
-    multiplicative()
+    for i in range(0, int(number)):
+        shift()
 
-  for i in range(0, int(number)):
-    additive()
+    for i in range(0, int(number)):
+        multiplicative()
 
-  writer2.writerow([firstPointSummary(broken_packets), secondPointSummary(broken_packets), thirdPointSummary(broken_packets), fourthPointSummary(broken_packets), fifthPointSummary(broken_packets), arithmeticAverage(broken_packets), stendardDeviation(broken_packets)])
+    for i in range(0, int(number)):
+        additive()
 
-  boxPlot(broken_packets)
+    writer2.writerow(
+        [firstPointSummary(broken_packets), secondPointSummary(broken_packets), thirdPointSummary(broken_packets),
+         fourthPointSummary(broken_packets), fifthPointSummary(broken_packets), arithmeticAverage(broken_packets),
+         standardDeviation(broken_packets)])
 
-  #tutaj robimy coś z listą -> statystyka 5-punktowa
-  broken_packets.clear()
-
+    #broken_packets.clear()
+plotCreator(broken_packets)
 statistics.close()
