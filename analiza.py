@@ -1,4 +1,5 @@
 import csv
+from numpy import np
 from odbiornik import packetDetector
 
 
@@ -7,12 +8,22 @@ from odbiornik import packetDetector
 
 
 # zapis pomiarów do pliku csv
-def stats(data, packet_length, one):
-    file = open('results.csv', 'w')
+def stats(data, packet_length, one, scr_type):
+    file = open('results.csv', 'a')
     writer = csv.writer(file)
-    header = ['(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)']
-    writer.writerow(header)
     broken = int(packetDetector(data, packet_length))
     good = int((len(data) / int(packet_length)) - broken)
-    writer.writerow([good, broken, one, 'Multiplicative'])
+    writer.writerow([good, broken, one, scr_type])
     file.close()
+    return broken
+
+
+
+def fivePointSummary(data):
+  return np.percentile(data, [0, 25, 50, 75, 100], interpolation='midpoint')
+  
+
+def analyze(data):
+  analyzed = fivePointSummary(data)
+  iqr = analyzed[3]-analyzed[1]
+  
