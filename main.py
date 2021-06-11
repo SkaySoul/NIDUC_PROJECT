@@ -73,6 +73,9 @@ for x in range(0, int(number_2)):
     additive()
 
   writer2.writerow([firstPointSummary(broken_packets), secondPointSummary(broken_packets), thirdPointSummary(broken_packets), fourthPointSummary(broken_packets), fifthPointSummary(broken_packets), arithmeticAverage(broken_packets), stendardDeviation(broken_packets)])
+
+  boxPlot(broken_packets)
+
   #tutaj robimy coś z listą -> statystyka 5-punktowa
   broken_packets.clear()
 

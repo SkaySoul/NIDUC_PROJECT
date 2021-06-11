@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import matplotlib.pyplot as plt
 from odbiornik import packetDetector
 
 
@@ -57,4 +58,14 @@ def stendardDeviation(brokenPackets):
 """
 
 
+
+
+def boxPlot(brokenPackets):
+ fig = plt.figure(figsize =(10, 7))
+ 
+ # Creating plot
+ plt.boxplot(brokenPackets)
+  
+# show plot
+ plt.show()
 

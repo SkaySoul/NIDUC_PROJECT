@@ -85,7 +85,7 @@ def multiplicativeDescramble(data):
 # operacja XOR pomiędzy częścią sygnału a wygenerowanym kluczem
 def additiveScramble(data):
     current_index = 0
-    scramble_key = int2ba(len(data))
+    # scramble_key = int2ba(len(data))
     scramble_key = int2ba(50)
 
     while current_index < len(data) - 1:
@@ -96,7 +96,7 @@ def additiveScramble(data):
 def additiveDescramble(data):
     current_index = 0
     temp = data.copy()
-    scramble_key = int2ba(len(data))
+    # scramble_key = int2ba(len(data))
     scramble_key = int2ba(50)
 
     while current_index < len(temp) - 1:

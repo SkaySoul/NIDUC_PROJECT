@@ -1,324 +1,53 @@
-<<<<<<< HEAD
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-129,21,15,negation
-135,15,15,negation
-133,17,15,negation
-81,69,15,shift
-75,75,15,shift
-73,77,15,shift
-116,34,15,multiplicative
-105,45,15,multiplicative
-119,31,15,multiplicative
-120,30,15,additive
-120,30,15,additive
-128,22,15,additive
+55,5,50,negation
+56,4,50,negation
+46,14,50,shift
+46,14,50,shift
+47,13,50,multiplicative
+48,12,50,multiplicative
+48,12,50,additive
+53,7,50,additive
+54,6,50,negation
+52,8,50,negation
+53,7,50,shift
+49,11,50,shift
+48,12,50,multiplicative
+45,15,50,multiplicative
+48,12,50,additive
+56,4,50,additive
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-49,11,15,negation
-56,4,15,negation
-51,9,15,negation
-38,22,15,shift
-42,18,15,shift
-45,15,15,shift
-50,10,15,multiplicative
-50,10,15,multiplicative
-52,8,15,multiplicative
-54,6,15,additive
-54,6,15,additive
-48,12,15,additive
+263,37,15,negation
+156,144,15,shift
+241,59,15,multiplicative
+252,48,15,additive
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-56,4,15,negation
-54,6,15,negation
-53,7,15,negation
-40,20,15,shift
-45,15,15,shift
-40,20,15,shift
-46,14,15,multiplicative
-51,9,15,multiplicative
-52,8,15,multiplicative
-57,3,15,additive
-55,5,15,additive
-50,10,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-126,24,15,negation
-119,31,15,negation
-124,26,15,negation
-65,85,15,shift
-79,71,15,shift
-70,80,15,shift
-123,27,15,multiplicative
-115,35,15,multiplicative
-114,36,15,multiplicative
-119,31,15,additive
-120,30,15,additive
-127,23,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-51,9,15,negation
-52,8,15,negation
-38,22,15,shift
-37,23,15,shift
-53,7,15,multiplicative
-52,8,15,multiplicative
-49,11,15,additive
-50,10,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-392,8,200,negation
-391,9,200,negation
-395,5,200,negation
-393,7,200,negation
-394,6,200,negation
-392,8,200,negation
-392,8,200,negation
-393,7,200,negation
-395,5,200,negation
-389,11,200,negation
-390,10,200,negation
-389,11,200,negation
-392,8,200,negation
-393,7,200,negation
-387,13,200,negation
-396,4,200,negation
-393,7,200,negation
-392,8,200,negation
-388,12,200,negation
-392,8,200,negation
-389,11,200,negation
-393,7,200,negation
-392,8,200,negation
-341,59,200,shift
-334,66,200,shift
-337,63,200,shift
-333,67,200,shift
-351,49,200,shift
-334,66,200,shift
-355,45,200,shift
-343,57,200,shift
-352,48,200,shift
-344,56,200,shift
-338,62,200,shift
-336,64,200,shift
-344,56,200,shift
-342,58,200,shift
-352,48,200,shift
-362,38,200,shift
-338,62,200,shift
-355,45,200,shift
-354,46,200,shift
-340,60,200,shift
-345,55,200,shift
-331,69,200,shift
-346,54,200,shift
-329,71,200,multiplicative
-348,52,200,multiplicative
-337,63,200,multiplicative
-343,57,200,multiplicative
-347,53,200,multiplicative
-346,54,200,multiplicative
-353,47,200,multiplicative
-341,59,200,multiplicative
-341,59,200,multiplicative
-348,52,200,multiplicative
-335,65,200,multiplicative
-345,55,200,multiplicative
-355,45,200,multiplicative
-343,57,200,multiplicative
-344,56,200,multiplicative
-341,59,200,multiplicative
-345,55,200,multiplicative
-345,55,200,multiplicative
-337,63,200,multiplicative
-344,56,200,multiplicative
-353,47,200,multiplicative
-341,59,200,multiplicative
-343,57,200,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-57,3,15,negation
-51,9,15,negation
-43,17,15,shift
-40,20,15,shift
-51,9,15,multiplicative
-49,11,15,multiplicative
-55,5,15,additive
-52,8,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-53,7,15,negation
-51,9,15,negation
-44,16,15,shift
-45,15,15,shift
-55,5,15,multiplicative
-50,10,15,multiplicative
-48,12,15,additive
-51,9,15,additive
-54,6,15,negation
-52,8,15,negation
-44,16,15,shift
-35,25,15,shift
-51,9,15,multiplicative
-53,7,15,multiplicative
-54,6,15,additive
-55,5,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-53,7,15,negation
-53,7,15,negation
-41,19,15,shift
-38,22,15,shift
-52,8,15,multiplicative
-49,11,15,multiplicative
-53,7,15,additive
-48,12,15,additive
-51,9,15,negation
-50,10,15,negation
-38,22,15,shift
-42,18,15,shift
-50,10,15,multiplicative
-51,9,15,multiplicative
-55,5,15,additive
-52,8,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-36,14,15,negation
-45,5,15,negation
-25,25,15,shift
-22,28,15,shift
-40,10,15,multiplicative
-40,10,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-53,7,15,negation
-53,7,15,negation
-36,24,15,shift
-44,16,15,shift
-51,9,15,multiplicative
-54,6,15,multiplicative
-47,13,15,additive
-54,6,15,additive
-54,6,15,negation
-49,11,15,negation
-39,21,15,shift
-44,16,15,shift
-51,9,15,multiplicative
-51,9,15,multiplicative
-53,7,15,additive
-53,7,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-34,11,15,negation
-39,6,15,negation
-23,22,15,shift
-27,18,15,shift
-39,6,15,multiplicative
-34,11,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-167,33,15,negation
-74,126,15,shift
-152,48,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-40,10,15,negation
-41,9,15,negation
-23,27,15,shift
-22,28,15,shift
-42,8,15,multiplicative
-41,9,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-89,11,15,negation
-84,16,15,negation
-66,34,15,shift
-61,39,15,shift
-78,22,15,multiplicative
-89,11,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-2,3,15,negation
-1,4,15,shift
-2,3,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-40,10,14,negation
-20,30,14,shift
-38,12,14,multiplicative
-38,12,14,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-42,8,14,negation
-26,24,14,shift
-41,9,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-44,6,15,negation
-46,4,15,negation
-26,24,15,shift
-26,24,15,shift
-41,9,15,multiplicative
-38,12,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-40,10,15,negation
-21,29,15,shift
-37,13,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-81,19,15,negation
-53,47,15,shift
-81,19,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-1926,74,15,negation
-1885,115,15,shift
-1890,110,15,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-43,7,15,negation
-23,27,15,shift
-38,12,15,multiplicative
-39,11,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-249,51,15,negation
+267,33,15,negation
 142,158,15,shift
-230,70,15,multiplicative
-249,51,15,additive
+245,55,15,multiplicative
+263,37,15,additive
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-1078,122,15,negation
-789,411,15,shift
-1011,189,15,multiplicative
-1066,134,15,additive
+55,5,15,negation
+33,27,15,shift
+51,9,15,multiplicative
+53,7,15,additive
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-79,21,15,negation
-31,69,15,shift
-63,37,15,multiplicative
-76,24,15,additive
+51,9,15,negation
+39,21,15,shift
+54,6,15,multiplicative
+49,11,15,additive
 (liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-7,3,15,negation
-5,5,15,shift
-7,3,15,multiplicative
-9,1,15,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-1073,127,10,negation
-689,511,10,shift
-1022,178,10,multiplicative
-1072,128,10,additive
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-205,45,40,negation
-205,45,40,shift
-220,30,40,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-229,21,10,negation
-171,79,10,shift
-211,39,10,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-182,18,14,negation
-137,63,14,shift
-171,29,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-179,21,14,negation
-124,76,14,shift
-172,28,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-177,23,14,negation
-125,75,14,shift
-166,34,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-177,23,14,negation
-131,69,14,shift
-167,33,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-87,13,14,negation
-61,39,14,shift
-81,19,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-182,18,14,negation
-141,59,14,shift
-172,28,14,multiplicative
-(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)
-1818,182,10,negation
-1167,833,10,shift
-1710,290,10,multiplicative
-=======
->>>>>>> refs/remotes/origin/main
+9,1,50,negation
+10,0,50,negation
+10,0,50,negation
+10,0,50,negation
+8,2,50,negation
+8,2,50,shift
+10,0,50,shift
+9,1,50,shift
+9,1,50,shift
+10,0,50,shift
+10,0,50,multiplicative
+9,1,50,multiplicative
+10,0,50,multiplicative
+10,0,50,multiplicative
+10,0,50,multiplicative
