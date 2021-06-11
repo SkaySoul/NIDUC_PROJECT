@@ -1,36 +1,79 @@
 from zaklocenia import *
-from analiza import stats
+from analiza import *
 from generator import generate
+import csv
 
 size = input("długość sygnału: ")
 ones_p = input("ilość jedynek(procentowo): ")
 packet_size = input("długość pakietów: ")
+number = input("liczba pomiarów na powtórzenie: ")
+number_2 = input("liczba powtórzeń: ")
+broken_packets = list()
 
-data = generate(size, ones_p, packet_size)
+file = open('results.csv', 'a')
+writer = csv.writer(file)
+header = ['(liczba pakietów poprawnych)  (liczba pakietów z błędami)  (procentowa ilość 1)  (rodzaj scramblera)']
+writer.writerow(header)
+file.close()
 
-print(data)
-# save(packet_size, data)
+statistics = open('stats.csv', 'a')
+writer2 = csv.writer(statistics)
+header2 = ['(min) (first quartile) (median) (third quartile) (max) (average) (deviation)']
+writer2.writerow(header2)
 
-# negationScramble(data)
-# print(data)
-# negationDescramble(data)
 
-# shiftScramble(data, packet_size)
-# print(data)
-# shiftDescramble(data, packet_size)
+def negation():
+    data = generate(size, ones_p, packet_size)
+    # print(data)
+    negationScramble(data)
+    broken_packets.append(stats(data, packet_size, ones_p, "negation"))
+    # print(data)
+    negationDescramble(data)
 
-multiplicativeScramble(data)
-print(data)
-multiplicativeDescramble(data)
 
-# additiveScramble(data)
-# print(data)
-# additiveDescramble(data)
+def shift():
+    data = generate(size, ones_p, packet_size)
+    # print(data)
+    shiftScramble(data, packet_size)
+    broken_packets.append(stats(data, packet_size, ones_p, "shift"))
+    # print(data)
+    shiftDescramble(data, packet_size)
 
-# save(packet_size, data)
 
-# repeatCounter(data, packet_size)
+def multiplicative():
+    data = generate(size, ones_p, packet_size)
+    # print(data)
+    multiplicativeScramble(data)
+    broken_packets.append(stats(data, packet_size, ones_p, "multiplicative"))
+    # print(data)
+    multiplicativeDescramble(data)
 
-print(data)
 
-stats(data, packet_size, ones_p)
+def additive():
+    data = generate(size, ones_p, packet_size)
+    # print(data)
+    additiveScramble(data)
+    broken_packets.append(stats(data, packet_size, ones_p, "additive"))
+    # print(data)
+    additiveDescramble(data)
+
+
+for x in range(0, int(number_2)):
+
+  for i in range(0, int(number)):
+    negation()
+  
+  for i in range(0, int(number)):
+    shift()
+
+  for i in range(0, int(number)):
+    multiplicative()
+
+  for i in range(0, int(number)):
+    additive()
+
+  writer2.writerow([firstPointSummary(broken_packets), secondPointSummary(broken_packets), thirdPointSummary(broken_packets), fourthPointSummary(broken_packets), fifthPointSummary(broken_packets), arithmeticAverage(broken_packets), stendardDeviation(broken_packets)])
+  #tutaj robimy coś z listą -> statystyka 5-punktowa
+  broken_packets.clear()
+
+statistics.close()
